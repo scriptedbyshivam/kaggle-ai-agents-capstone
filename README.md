@@ -1,6 +1,5 @@
 # Atlas One: Multi‑Agent Travel Concierge
 
-![Cover page banner](assets/cover_page_banner.png)
 
 **Atlas One** is a secure, multi‑agent travel concierge built with the **Agent Development Kit (ADK) 2.0** and the **Model Context Protocol (MCP)**.  It showcases a robust workflow, PII‑scrubbing, prompt‑injection protection, and a Human‑in‑the‑Loop (HITL) confirmation step.
 
