@@ -59,6 +59,30 @@ uv run adk web app --host 127.0.0.1 --port 18081
 ```
 Open your browser at **http://localhost:18081** – you can now chat with Atlas One, see the workflow graph, and view logs.
 
+#### 📸 Playground UI in Action
+Here is a step-by-step walkthrough of the interactive multi-agent chat interface in the ADK Playground:
+
+##### 1. Security Checkpoint Evaluation
+The prompt is first evaluated by the `security_checkpoint` node for prompt injection, PII leak, or safety violations before passing to the main orchestrator.
+![1. Security Guard Check](assets/playground_security_checkpoint.png)
+
+##### 2. Sub-Agent Initialization
+The orchestrator routes work to specialized sub-agents (`itinerary_agent`, `safety_agent`), tracing node execution visually in the graph panel.
+![2. Sub-Agent Initialization](assets/playground_sub_agents_init.png)
+
+##### 3. Tool Execution Tracing
+Sub-agents call external travel tools (`search_top_attractions`, `get_local_restrictions`, `get_weather_advisory`) via MCP.
+![3. Tool Execution Tracing](assets/playground_tool_execution.png)
+
+##### 4. Itinerary Polishing
+Once sub-agents complete their runs, the orchestrator invokes a polishing phase to format and enrich the travel plan.
+![4. Itinerary Polishing](assets/playground_itinerary_polishing.png)
+
+##### 5. Final Travel Plan Output
+The final, fully safe, and comprehensive itinerary is presented in a clean Markdown layout.
+![5. Final Curated Itinerary](assets/playground_final_itinerary.png)
+
+
 ### 5️⃣ Run the FastAPI server (backend only)
 ```powershell
 uv run adk run app
